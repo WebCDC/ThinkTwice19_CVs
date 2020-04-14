@@ -1,0 +1,92 @@
+/* Down arrow by bootstrap*/
+.u-down-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+  }
+  
+  /* Fix specifically for dropdown hovers in the navbar*/
+  .nav-link .dropdown-toggle::after,
+  .nav-link.dropdown-toggle::after {
+    border: 0;
+    margin: 0;
+    display: inline;
+    vertical-align: 0;
+  }
+  
+  /* Fix for dropdowns in navbar*/
+  .nav-link .dropdown-toggle,
+  .nav-link.dropdown-toggle {
+    cursor: pointer;
+  }
+  
+  /* More dropdown fixes*/
+  .dropdown-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+  /* 
+  Should only be the color. 
+  The division between item should be padding 
+  Otherwise mouseover issues
+  */
+  .dropdown-divider{
+    margin:0;
+  }
+  .dropdown-menu > li{
+    display: flex;
+  }
+  .dropdown-menu > li > a {
+    flex: 1 1 auto;
+    padding: 6px 10px 8px 10px;
+    /* Note: same color as bootstrap's*/
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+#mainNav .navbar-nav .nav-item .nav-link {
+  font-size: 100%;
+  letter-spacing: normal;
+}
+
+/* Changing the hover behaviour*/
+#mainNav .navbar-nav .nav-item .nav-link:hover {
+  color: #fec503;
+  font-weight: bold;
+}
+
+/* 
+  Okay so a little explanation on this:
+  Because when we bold text it's overall size increases,
+  while we could do size manipulation, we're instead
+  opting for a really simple solution, which is to 
+  "save" space equal to the size.
+  TODO: Maybe change this in the future?
+*/
+#mainNav .navbar-nav .nav-item .nav-link::after {
+  visibility: hidden;
+  overflow: hidden;
+  display: block;
+  content: attr(aria-title);
+  font-weight: 800;
+  height: 0;
+}
+
+
+/* resetting the brand padding */
+#mainNav.navbar-shrink .navbar-brand {
+  padding: 0px;
+}
+
+/*  Utilities */
+.u-break-word {
+  word-break: break-word;
+  word-wrap: break-word
+}
